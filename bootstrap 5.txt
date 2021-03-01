@@ -7,6 +7,8 @@ IMPORTANT CLASS
 4.Typography
 5.Accordion
 6.Breadcrumb
+7.Media
+8.Position
 
 IMPORTANT CLASS
 
@@ -24,7 +26,11 @@ IMPORTANT CLASS
 .pe-2
 .px-2
 .py-2
-.float-end
+.fixed-top
+.sticky-top
+.float-end => Same as pull-right
+.float-md-end => After arrive end of -md- float becomes start
+.float-none
 .text-center
 .text-end
 .card-body -> give some padding around every side.
@@ -32,10 +38,27 @@ IMPORTANT CLASS
 .rounded-circle
 .rounded-top
 .bg-light
+.bg-secondary
 .bg-light .border
 .border
 .border .border-2
 .border .border-primary
+
+ Hiding elements
+.d-none =>  Hidden on all
+.d-none .d-sm-block => Hidden only on xs
+
+.d-block => Visible on all
+.d-block .d-sm-none => Visible only on xs
+
+
+.shadow-sm	
+.shadow
+.shadow-lg
+.mw-100 => max-width: 100%;
+.w-25 => Width 25%
+
+
 
 ----------------
 1.Breakpoints
@@ -124,6 +147,28 @@ OR
   This is a lead paragraph. It stands out from regular paragraphs.
 </p>
 
+(iii)
+<p class="text-primary">.text-primary</p>
+
+(iv)
+<p><a href="#" class="text-reset">Test</a></p>
+<p><a href="#" class="text-decoration-none">Test</a></p>
+
+
+.user-select-all
+.user-select-none
+
+.text-lowercase
+.text-uppercase
+.text-capitalize
+
+.lh-1 => line height
+.lh-sm
+.lh-lg
+.lh-base
+.font-monospace => creating space
+.text-muted => 
+
 Note: For More float features see [Content > Images]
 
 -------
@@ -159,6 +204,18 @@ Components > Breadcrumb
 ----------------
 7.Media
 
+
+<div class="d-flex position-relative">
+  <img src="https://via.placeholder.com/100x100" class="flex-shrink-0 me-3" alt="...">
+  <div>
+    <h5 class="mt-0">Custom component with stretched link</h5>
+    <p>This is some placeholder content for the custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
+    <a href="#" class="stretched-link">Go somewhere</a>
+  </div>
+</div>	
+
+OR
+
  <div class="d-flex mt-100">
   <!-- Icon -->
   <div class="icon text-primary">
@@ -181,8 +238,10 @@ Components > Breadcrumb
   </div>
 </div>
 
+----------------
 
-
+8.Position
+Utilities > Position
 
 
 
