@@ -1,0 +1,94 @@
+Web Core Vitals:
+1. Optimise design for Mobile view
+   i.   Need to optimize big element of Above the Fold Content
+        to load fast
+   ii.  Don't use Slider, Animation, Video on Above the Fold Content area.
+   iii. May use CSS gradient with text
+   iv.  Keep optimized text.
+   v.   Maximum use sing optimized Image [webp format]
+   vi.  If animation need the keep them below the Above the Fold Content area.
+   vii. *** Keep 'mobile menu' and 'Mobile banner' css under <head> tag just 
+        before 'custom.css' file. Also keep this type of css
+        .mobile-menu{display:none;}
+        .mobile-banner{display:none;}
+        .desktop-banner{display:block;}
+        .desktop-menu{display:block;}
+        @media(max-width:767px){
+          .mobile-menu{display:block;}
+          .mobile-banner{display:block;}
+          .desktop-banner{display:none;}
+          .desktop-menu{display:none;}
+        }
+
+
+2. keep separate css and js files for Mobile
+   Example:
+   <link rel="stylesheet" href="style.css" media="only screen and (max-width: 960px)">
+
+3. Check for W3C Markup & CSS vlidaton
+
+4. Try to use Mobile pre install fonts. Example: Roboto
+   
+
+5. Use font-display:swap
+   For WordPress use 'Swap google Font Display' By FlyingPress
+
+6. Use 'defer' attribute in <script>
+   Example: <script defer src="...min.js" />
+   For wordpress may use 'Async Javascript' By Frank Goossens (futtta)
+
+7. Image Optimization
+   i.   Take minimum image size as pre mobile and Desktop width
+   ii.  Compress image in compressjpeg.com
+   iii. Convert jpg/jpeg/png into webp.
+
+8. Add lazy loading for Html website
+   source: https://web.dev/browser-level-image-lazy-loading/
+   For wordpress use 'Autoptimize' By WP Rocket
+   Note: i.  Using 'Autoptimize' we can disable lazy load image 
+             for the first image above the fold.
+         ii. add the skip-lazy class to any image we wish 
+             to exclude from being lazyloaded
+
+9. W3 Total Cache
+
+10. Compress HTML,CSS,JS files
+
+11. Add Expires Headers in .htaccess file
+
+CODE
+------------------
+
+## EXPIRES HEADER CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType image/svg "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType application/javascript "access 1 month"
+ExpiresByType application/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 2 days"
+</IfModule>
+## EXPIRES HEADER CACHING ##
+
+------------------
+source:
+https://kinsta.com/knowledgebase/add-expires-headers-wordpress/
+
+-------------------------------------------------------------------------------
+
+R&D:
+https://snigel.com/blog/11-critical-ways-to-improve-first-contentful-paint-fcp
+https://blog.hubspot.com/marketing/remove-javascript-rendering-block
+https://kinsta.com/blog/website-speed-test/
+
+
+
+
+
