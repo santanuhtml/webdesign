@@ -1,0 +1,275 @@
+Mobile Menu
+-------------------------------------
+Links
+-------------------------------------
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+-------------------------------------
+Html
+-------------------------------------
+<!-- Mobile-menu -->
+    <div class="mobile-nav">
+      <div class="menu-area">
+        <a href="#" class="hummenu" id="humMenu">
+          <i class="bi bi-list"></i>
+        </a>
+      </div>
+      <div class="logo-area">
+        <a href="index.php">
+          <img src="img/gknotebook-logo-white.png" alt="" class="img-responsive">
+        </a>
+      </div>
+      <div class="cart-area">
+        <a href="#" class="cart-icon">
+          <span class="has-item"></span>
+          <i class="bi bi-bag"></i>
+        </a>
+      </div>
+    </div>
+    <div class="slidemenu-overlay"></div>
+    <div class="slidemenu" id="slidemenu">
+      <div class="slidemenu-header">
+        <a href="#" class="close-menu" id="closeMenu">
+          <i class="bi bi-x-lg"></i>
+        </a>
+      </div> 
+      <div class="slidemenu-menu-area">
+        <ul class="list-unstyled slidemenu-items">
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#" data-toggle="collapse" data-target="#shop" class="collapsed">Science 
+              <i class="bi bi-plus-lg"></i>
+              <i class="bi bi-dash-lg"></i>
+            </a>
+            <ul class="sub-menu list-unstyled collapse" id="shop">
+              <li><a href="#">Physics</a></li>
+              <li><a href="#">Chemistry</a></li>
+              <li><a href="#">Bio-Science</a></li>
+              <li><a href="#">Environmental Science</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" data-toggle="collapse" data-target="#products" class="collapsed">History <i class="bi bi-plus-lg"></i><i class="bi bi-dash-lg"></i></a>
+            <ul class="sub-menu list-unstyled collapse" id="products">
+              <li><a href="#">Ancient India</a></li>
+              <li><a href="#">Medieval India</a></li>
+              <li><a href="#">Freedom Struggle</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Geography</a></li>
+          <li><a href="#">Indian Polity</a></li>
+        </ul>
+      </div> 
+    </div><!-- /Mobile-menu -->
+    <div class="mobile-height"></div>
+
+
+-------------------------------------
+less
+-------------------------------------
+.mobile-nav {
+  display: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 60px;
+  background: #00243e;
+  z-index: 9;
+  .logo-area {
+    flex: 1;
+    text-align: center;
+    a{
+      padding: 15px;
+      display: inline-block;
+      img {
+        max-width: 150px;
+        display: inline-block;
+      }
+    }
+  }
+  .menu-area {
+    width: 60px;
+    a.hummenu {
+      display: inline-block;
+      padding: 15px;
+      opacity: 1;
+      color: #fff;
+      line-height: 0;
+      i {
+        position: relative;
+        top: 1px;
+        font-size: 28px;
+      }
+    }
+  }
+  .cart-area {
+    width: 55px;
+    margin-right: 5px;
+    text-align: right;
+    a.cart-icon {
+      display: inline-block;
+      position: relative;
+      padding: 15px;
+      font-size: 18px;
+      color: #333;
+      i {
+        position: relative;
+        top: 2px;
+        color:#fff;
+      }
+      .has-item {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #fc1d4d;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+      }
+    }
+  }
+}
+.slidemenu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+.slidemenu-overlay.open {
+  pointer-events: auto;
+  opacity: 1;
+}
+.slidemenu{
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+  left: -320px;
+  width: 320px;
+  background: #001a2c;
+  color: #f1f1f1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  .slidemenu-header{
+    text-align: right;
+    height: 52px;
+    .close-menu{
+      display: inline-block;
+      padding: 10px 15px;
+      font-size: 20px;
+      color: #fff;
+      opacity: .8;
+    }
+  }
+  .slidemenu-menu-area{
+    height: calc(100vh - 10px);
+    overflow-y: auto;
+  }
+  .slidemenu-items{
+    padding: 10px 20px;
+    a{
+      color: #f1f1f1;
+    }
+  }
+  .slidemenu-items > li {
+    border-bottom: 1px solid #464646;
+  }
+  .slidemenu-items > li > a {
+    padding: 15px 0px;
+    display: block;
+    position: relative;
+  }
+  .slidemenu-items > li > a:focus {
+    text-decoration: none;
+  }
+  .slidemenu-items > li > a.collapsed .bi-dash-lg {
+    display: none;
+  }
+  .slidemenu-items > li > a.collapsed .bi-plus-lg {
+    display: inline-block;
+  }
+  .slidemenu-items > li > a .bi-dash-lg {
+    display: inline-block;
+  }
+  .slidemenu-items > li > a .bi-plus-lg {
+    display: none;
+  }
+  .slidemenu-items > li > a i {
+    position: absolute;
+    right: 0px;
+    top: 15px;
+  }
+  .sub-menu {
+    padding-left: 10px;
+    li{
+      a{
+        display: block;
+        padding: 8px 0px;
+        font-size: 0.9em;
+        color: #b0b0b0;
+      }
+    }
+  }
+  .sub-menu li:last-child {
+    margin-bottom: 15px;
+  }
+  .slidemenu-items > li > a {
+    font-weight: 100;
+    font-size: 19px;
+  }
+}
+.slidemenu.menu-open {
+  left: 0;
+}
+.mobile-height{
+  display: none;
+}
+@media only screen and (max-width: 400px) {
+  .slidemenu {
+    left: -100%;
+    width: 100%;
+  }
+}
+@media(max-width: 767px){
+  .pre-nav, .navbar{
+    display: none !important;
+  }
+  .mobile-height{
+    display: block;
+    height: 65px;
+  }
+  .mobile-nav {
+    display: flex;
+  }
+}
+
+-------------------------------------
+JQUERY
+-------------------------------------
+$('#slidemenu').on('show.bs.collapse','.collapse', function() {
+$('#slidemenu').find('.sub-menu.in').collapse('hide');
+});
+$('#filterBox').on('show.bs.collapse','.collapse', function() {
+  $('#filterBox').find('.sub-menu.in').collapse('hide');
+});
+$('#humMenu').click(function(){
+  $('#slidemenu').addClass('menu-open');
+  $('.slidemenu-overlay').addClass('open');
+});
+$('#closeMenu').click(function(){
+  $('#slidemenu').removeClass('menu-open');
+  $('.slidemenu-overlay').removeClass('open');
+});
+$('.slidemenu-overlay').click(function(){
+  $('#slidemenu').removeClass('menu-open');
+  $('#filterBox').removeClass('menu-open');
+  $(this).removeClass('open');
+});
